@@ -1,6 +1,4 @@
 import './App.css'
-import Vizualizare from './routes/views/vizualizare';
-import Admin from './routes/views/admin';
 import Studenti from './routes/views/vizualizari/studenti';
 import Teme from './routes/views/vizualizari/teme';
 import Predari from './routes/views/vizualizari/predari';
@@ -20,14 +18,12 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path="/vizualizare" element={<Vizualizare />} />
           <Route path="/vizualizari/studenti" element={<Studenti />} />
           <Route path="/vizualizari/teme" element={<Teme />} />
           <Route path="/vizualizari/predari" element={<Predari />} />
           <Route path="/inserare/inserare_studenti" element={<InserareStudenti />}/>
           <Route path="/inserare/inserare_teme" element={<InserareTeme />}/>
           <Route path="/inserare/inserare_predari" element={<InserarePredari />}/>
-          <Route path="/admin" element={<Admin />} />
           <Route path="/" element={<Home />} />
         </Routes>
       </Router>
