@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+.sidebar-btn {
+  @apply w-full flex items-center gap-3 px-3 py-2 rounded-lg
+         text-gray-600 hover:bg-pink-50 hover:text-pink-600;
+}
+
+.sidebar-btn.active {
+  @apply bg-pink-100 text-pink-600 font-medium;
+}

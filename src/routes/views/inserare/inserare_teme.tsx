@@ -37,17 +37,51 @@ const InserareTeme = () => {
     };
 
   return (
-    <>
-        <form onSubmit={handleSubmit}>
-                <h2>Inserare Temă</h2>
-                <input type="text" name="denumire" placeholder="Denumire" value={formData.denumire} onChange={handleChange} required />
-                <input type="text" name="materie" placeholder="Materie" value={formData.materie} onChange={handleChange} required />
-                <input type="date" name="termen_limita" placeholder="Termen Limită" value={formData.termen_limita} onChange={handleChange} required />
-                <button type="submit">Inserează Temă</button>
-            </form>
-            {message && <p>{message}</p>}
-    </>
-  )
-}
+    <div className="bg-white rounded-xl shadow-sm p-6 max-w-3xl">
+      <h1 className="text-xl font-semibold mb-6">Inserare temă</h1>
+
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <input
+          name="denumire"
+          placeholder="Denumire"
+          value={formData.denumire}
+          onChange={handleChange}
+          className="border rounded px-3 py-2 w-full text-sm"
+          required
+        />
+
+        <input
+          name="materie"
+          placeholder="Materie"
+          value={formData.materie}
+          onChange={handleChange}
+          className="border rounded px-3 py-2 w-full text-sm"
+          required
+        />
+
+        <input
+          type="date"
+          name="termen_limita"
+          value={formData.termen_limita}
+          onChange={handleChange}
+          className="border rounded px-3 py-2 w-full text-sm"
+          required
+        />
+
+        <div className="flex justify-end pt-4">
+          <button
+            type="submit"
+            className="px-5 py-2 text-sm rounded-lg bg-pink-600 text-white hover:bg-pink-700">
+            Salvează
+          </button>
+        </div>
+      </form>
+
+      {message && (
+        <p className="mt-4 text-sm text-gray-600">{message}</p>
+      )}
+    </div>
+  );
+};
 
 export default InserareTeme

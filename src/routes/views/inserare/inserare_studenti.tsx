@@ -39,19 +39,70 @@ const InserareStudenti = () => {
     };
 
     return (
-        <>
-            <form onSubmit={handleSubmit}>
-                <h2>Inserare Student</h2>
-                <input type="text" name="nume" placeholder="Nume" value={formData.nume} onChange={handleChange} required />
-                <input type="text" name="prenume" placeholder="Prenume" value={formData.prenume} onChange={handleChange} required />
-                <input type="text" name="cnp" placeholder="CNP" value={formData.cnp} onChange={handleChange} required />
-                <input type="text" name="an" placeholder="An" value={formData.an} onChange={handleChange} required />
-                <input type="text" name="serie" placeholder="Serie" value={formData.serie} onChange={handleChange} required />
-                <button type="submit">Inserează Student</button>
-            </form>
-            {message && <p>{message}</p>}
-        </>
-    )
-  }
+    <div className="bg-white rounded-xl shadow-sm p-6 max-w-3xl">
+      <h1 className="text-xl font-semibold mb-6">Inserare student</h1>
+
+      <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
+        <input
+          name="nume"
+          placeholder="Nume"
+          value={formData.nume}
+          onChange={handleChange}
+          className="border rounded px-3 py-2 text-sm"
+          required
+        />
+
+        <input
+          name="prenume"
+          placeholder="Prenume"
+          value={formData.prenume}
+          onChange={handleChange}
+          className="border rounded px-3 py-2 text-sm"
+          required
+        />
+
+        <input
+          name="cnp"
+          placeholder="CNP"
+          value={formData.cnp}
+          onChange={handleChange}
+          className="border rounded px-3 py-2 text-sm col-span-2"
+          required
+        />
+
+        <input
+          name="an"
+          placeholder="An"
+          value={formData.an}
+          onChange={handleChange}
+          className="border rounded px-3 py-2 text-sm"
+          required
+        />
+
+        <input
+          name="serie"
+          placeholder="Serie"
+          value={formData.serie}
+          onChange={handleChange}
+          className="border rounded px-3 py-2 text-sm"
+          required
+        />
+
+        <div className="col-span-2 flex justify-end mt-4">
+          <button
+            type="submit"
+            className="px-5 py-2 text-sm rounded-lg bg-pink-600 text-white hover:bg-pink-700"
+          >
+            Salvează
+          </button>
+        </div>
+      </form>
+
+      {message && (
+        <p className="mt-4 text-sm text-gray-600">{message}</p>
+      )}
+    </div>
+  );
+};
 
 export default InserareStudenti

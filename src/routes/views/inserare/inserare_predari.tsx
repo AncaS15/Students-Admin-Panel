@@ -38,18 +38,61 @@ const InserarePredari = () => {
     };
 
   return (
-    <>
-        <form onSubmit={handleSubmit}>
-            <h2>Inserare Predare</h2>
-            <input type="text" name="idstudent" placeholder="Id Student" value={formData.idstudent} onChange={handleChange} required />
-            <input type="text" name="idtema" placeholder="Id Temă" value={formData.idtema} onChange={handleChange} required />
-            <input type="date" name="data_predare" placeholder="Dată Predare" value={formData.data_predare} onChange={handleChange} required />
-            <input type="text" name="nota" placeholder="Notă" value={formData.nota} onChange={handleChange} required />
-            <button type="submit">Inserează Predarea</button>
-        </form>
-        {message && <p>{message}</p>}
-    </>
-  )
-}
+    <div className="bg-white rounded-xl shadow-sm p-6 max-w-3xl">
+      <h1 className="text-xl font-semibold mb-6">Inserare predare</h1>
+
+      <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
+        <input
+          name="idstudent"
+          placeholder="ID Student"
+          value={formData.idstudent}
+          onChange={handleChange}
+          className="border rounded px-3 py-2 text-sm"
+          required
+        />
+
+        <input
+          name="idtema"
+          placeholder="ID Temă"
+          value={formData.idtema}
+          onChange={handleChange}
+          className="border rounded px-3 py-2 text-sm"
+          required
+        />
+
+        <input
+          type="date"
+          name="data_predare"
+          value={formData.data_predare}
+          onChange={handleChange}
+          className="border rounded px-3 py-2 text-sm"
+          required
+        />
+
+        <input
+          name="nota"
+          placeholder="Notă"
+          value={formData.nota}
+          onChange={handleChange}
+          className="border rounded px-3 py-2 text-sm"
+          required
+        />
+
+        <div className="col-span-2 flex justify-end mt-4">
+          <button
+            type="submit"
+            className="px-5 py-2 text-sm rounded-lg bg-pink-600 text-white hover:bg-pink-700"
+          >
+            Salvează
+          </button>
+        </div>
+      </form>
+
+      {message && (
+        <p className="mt-4 text-sm text-gray-600">{message}</p>
+      )}
+    </div>
+  );
+};
 
 export default InserarePredari

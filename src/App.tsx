@@ -7,6 +7,7 @@ import Predari from './routes/views/vizualizari/predari';
 import InserareStudenti from './routes/views/inserare/inserare_studenti';
 import InserareTeme from './routes/views/inserare/inserare_teme';
 import InserarePredari from './routes/views/inserare/inserare_predari';
+import Home from './routes/views/Home';
 import {
   BrowserRouter as Router,
   Route,
@@ -27,6 +28,7 @@ function App() {
           <Route path="/inserare/inserare_teme" element={<InserareTeme />}/>
           <Route path="/inserare/inserare_predari" element={<InserarePredari />}/>
           <Route path="/admin" element={<Admin />} />
+          <Route path="/" element={<Home />} />
         </Routes>
       </Router>
     </>
